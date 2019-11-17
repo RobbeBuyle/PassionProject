@@ -28,23 +28,17 @@ I would like to explore the possibility of using a third party login service suc
 I don't really have a company or institution I'm developing this app for. The main target audience for this app would be forgetful people or someone that needs that little encouragement to complete a set of tasks. It would also be useful tool for students so they can easily track their progress and check if they have everything on an assignment.
 
 ## Planning
-Week 1 (04/11). In this week, the design of the app should be done so that I have a clear vision what needs to be programmed.                 I also would like to run some tests with Flutter aswel as watch some Tutorials and read the docs of the                       Flutter framework.
+Week 1 (11/11). In this week, the design of the app should be done so that I have a clear vision what needs to be programmed.                 I also would like to run some tests with Flutter aswel as watch some Tutorials and read the docs of the                       Flutter framework.
 
-week 2 (11/11). Week 2 = Front-end week! Learning the positioning, styling and interaction of widgets will be key this week. 
+week 2 (18/11). Week 2 = Front-end week! Learning the positioning, styling and interaction of widgets will be key this week. 
 
-week 3 (18/11). Since there is another project going on during week 2, this week would be used to do the rest of the front-end
-                work that is still left over. Idealy, I would also be doing some tests on the best way of writing a backend to
-                save the lists in.
+week 3 (25/11). During this week, I would like to continue to work on the front-end of the app. Idealy, I would also be doing                 some tests on the best way of writing a backend to save the lists in.
 
-week 4 (25/11). In this week, making CRUD-operations to a database will be the main focus.
+week 4 (02/12). In this week, making CRUD-operations to a database will be the main focus.
 
-week 5 (02/12). In this week, I would like to perfect the backend of the app and look into implementing authentication. 
+week 5 (09/12). In this week, I would like to perfect the backend of the app and look into implementing authentication. Also,                 let's get moving! Creating and implementing Flare animations into the Flutter app will be my main objective                   this week. 
 
-week 6 (09/12). Let's get moving! Creating and implementing Flare animations into the Flutter app will be my main objective
-                this week.
-
-week 7 (16/12). The final week will be used to perfect and stress-testing the application on all platforms. I would also like
-                to add the possibility to change a saved list and save that changed list to your own account.
+week 6 (16/12). The final week will also be used to perfect and stress-testing the application on all platforms. If possible,                 continuous delivery would be a really awesome concept to check out.
 
 ## Blog
 I will be documenting my work and experiences with Flutter as I go on my Medium-blog labeled with PPP#.
