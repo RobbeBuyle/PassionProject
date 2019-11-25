@@ -7,7 +7,7 @@ class Hello extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Hello!'),
+          title: Text('Hello Frederik!'),
         ),
         body: Text('This is some text. Welcome to my app!'));
   }
