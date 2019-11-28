@@ -25,6 +25,15 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
           )
         ],
       ),
+      body: Center(
+        child: RaisedButton(
+          child: Text('Screen 1'),
+          onPressed: () {
+            print('nav to screen 1');
+            Navigator.pushNamed(context, '/');
+          },
+        ),
+      ),
     );
   }
 }

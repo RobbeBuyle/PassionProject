@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tick/screens/discover_screen.dart';
 import 'screens/list_screen.dart';
 
 void main() => runApp(MyApp());
@@ -9,7 +10,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Tick',
       theme: _configureThemeData(),
-      home: ListScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => ListScreen(),
+        '/discover': (context) => DiscoverScreen(),
+      },
     );
   }
 
