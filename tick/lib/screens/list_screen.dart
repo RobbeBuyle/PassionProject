@@ -25,15 +25,6 @@ class _ListScreenState extends State<ListScreen> {
           )
         ],
       ),
-      body: Center(
-        child: RaisedButton(
-          child: Text('Screen 2'),
-          onPressed: () {
-            print('nav to screen 2');
-            Navigator.pushNamed(context, '/discover');
-          },
-        ),
-      ),
     );
   }
 }
