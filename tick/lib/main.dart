@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tick/screens/account_screen.dart';
-import 'package:tick/screens/create_screen.dart';
-import 'package:tick/screens/discover_screen.dart';
 import 'App.dart';
-import 'screens/list_screen.dart';
 
 void main() => runApp(MyApp());
 
