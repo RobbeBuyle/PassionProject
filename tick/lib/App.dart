@@ -4,13 +4,13 @@ import 'package:tick/screens/create_screen.dart';
 import 'package:tick/screens/discover_screen.dart';
 import 'package:tick/screens/list_screen.dart';
 import 'package:tick/widgets/bottomNavBar.dart';
+import 'package:tick/style/style.dart';
 
 class App extends StatefulWidget {
   final List<BarItem> barItems = [
-    BarItem(text: "lists", icon: Icons.note, color: Colors.amber),
-    BarItem(text: "discover", icon: Icons.explore, color: Colors.purple),
-    BarItem(text: "account", icon: Icons.perm_identity, color: Colors.teal),
-    BarItem(text: "create", icon: Icons.note, color: Colors.pink),
+    BarItem(text: "lists", icon: Icons.note, color: ColorsYellow),
+    BarItem(text: "discover", icon: Icons.explore, color: ColorsPurple),
+    BarItem(text: "account", icon: Icons.perm_identity, color: ColorsBlue),
   ];
   @override
   _AppState createState() => _AppState();

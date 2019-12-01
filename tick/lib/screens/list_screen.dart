@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tick/style/flutter_icons_icons.dart';
+import 'package:tick/style/style.dart';
 
 class ListScreen extends StatefulWidget {
   @override
@@ -10,6 +12,7 @@ class _ListScreenState extends State<ListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: ColorsLightBackground,
         title: Text(
           'LISTS',
           style: TextStyle(
@@ -20,10 +23,17 @@ class _ListScreenState extends State<ListScreen> {
         elevation: 0.0,
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.notifications),
+            icon: Icon(FlutterIcons.notifications),
             iconSize: 24.0,
           )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        backgroundColor: ColorsYellow,
+        onPressed: () {
+          print('add note');
+        },
       ),
     );
   }

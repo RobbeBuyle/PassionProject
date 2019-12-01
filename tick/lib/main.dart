@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'App.dart';
+import 'style/style.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,8 +16,10 @@ class MyApp extends StatelessWidget {
 
   ThemeData _configureThemeData() {
     return ThemeData(
-      primarySwatch: Colors.indigo,
-      accentColor: Colors.red,
+      appBarTheme: AppBarTheme(
+        textTheme: TextTheme(title: AppBarTextStyle),
+      ),
+      textTheme: TextTheme(title: TitleTextStyle, body1: Body1TextStyle),
     );
   }
 }

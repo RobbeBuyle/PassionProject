@@ -35,10 +35,10 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar>
         child: Material(
           child: Padding(
             padding: const EdgeInsets.only(
-                bottom: 12.0, top: 12.0, left: 16.0, right: 16.0),
+                bottom: 10.0, top: 10.0, left: 12.0, right: 12.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: _buildBarItems(),
             ),
           ),
@@ -73,7 +73,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar>
               Icon(
                 item.icon,
                 color: isSelected ? item.color : Colors.grey[600],
-                size: 24.0,
+                size: 30.0,
               ),
               SizedBox(
                 width: 10.0,
@@ -84,8 +84,10 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar>
                 vsync: this,
                 child: Text(
                   isSelected ? item.text : "",
-                  style:
-                      TextStyle(color: item.color, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      color: item.color,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18.0),
                 ),
               )
             ],
