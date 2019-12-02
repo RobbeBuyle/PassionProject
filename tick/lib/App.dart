@@ -3,7 +3,7 @@ import 'package:tick/screens/account_screen.dart';
 import 'package:tick/screens/create_screen.dart';
 import 'package:tick/screens/discover_screen.dart';
 import 'package:tick/screens/list_screen.dart';
-import 'package:tick/widgets/bottomNavBar.dart';
+import 'package:tick/widgets/bottom_navbar.dart';
 import 'package:tick/style/style.dart';
 
 class App extends StatefulWidget {
@@ -32,27 +32,6 @@ class _AppState extends State<App> {
               _selectedIndex = index;
             });
           }),
-
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: <BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(title: Text('lists'), icon: Icon(Icons.note)),
-      //     BottomNavigationBarItem(
-      //         title: Text('discover'), icon: Icon(Icons.explore)),
-      //     BottomNavigationBarItem(
-      //         title: Text('account'), icon: Icon(Icons.perm_identity)),
-      //     BottomNavigationBarItem(
-      //         title: Text('create'), icon: Icon(Icons.note_add)),
-      //   ],
-      //   onTap: _onBarItemTap,
-      //   currentIndex: _selectedIndex,
-      //   type: BottomNavigationBarType.fixed,
-      // ),
     );
   }
-
-  // void _onBarItemTap(int value) {
-  //   setState(() {
-  //     _selectedIndex = value;
-  //   });
-  // }
 }
