@@ -3,14 +3,16 @@ import 'package:tick/screens/account_screen.dart';
 import 'package:tick/screens/create_screen.dart';
 import 'package:tick/screens/discover_screen.dart';
 import 'package:tick/screens/list_screen.dart';
+import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/widgets/bottom_navbar.dart';
 import 'package:tick/style/style.dart';
 
 class App extends StatefulWidget {
   final List<BarItem> barItems = [
-    BarItem(text: "lists", icon: Icons.note, color: ColorsYellow),
-    BarItem(text: "discover", icon: Icons.explore, color: ColorsPurple),
-    BarItem(text: "account", icon: Icons.perm_identity, color: ColorsBlue),
+    BarItem(text: "lists", icon: FlutterIcons.tabnotes, color: ColorsYellow),
+    BarItem(
+        text: "discover", icon: FlutterIcons.tabdiscover, color: ColorsPurple),
+    BarItem(text: "account", icon: FlutterIcons.tabaccount, color: ColorsBlue),
   ];
   @override
   _AppState createState() => _AppState();

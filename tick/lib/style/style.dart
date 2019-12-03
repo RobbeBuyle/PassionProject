@@ -28,14 +28,21 @@ const String FontNameTitle = "Oswald";
 const AppBarTextStyle = TextStyle(
   fontFamily: FontNameTitle,
   fontSize: 42.0,
-  color: Colors.black,
+  color: ColorsBlack,
 );
 
 const TitleTextStyle = TextStyle(
   fontFamily: FontNameDefault,
   fontSize: 24.0,
   fontWeight: FontWeight.w700,
-  color: Colors.black,
+  color: ColorsBlack,
+);
+
+const Body1BoldTextStyle = TextStyle(
+  fontFamily: FontNameDefault,
+  fontSize: 16.0,
+  fontWeight: FontWeight.w700,
+  color: ColorsBlack,
 );
 
 const Body1TextStyle = TextStyle(
@@ -43,6 +50,13 @@ const Body1TextStyle = TextStyle(
   fontSize: 16.0,
   fontWeight: FontWeight.w400,
   color: Colors.black,
+);
+
+const Body1LightTextStyle = TextStyle(
+  fontFamily: FontNameDefault,
+  fontSize: 15.0,
+  fontWeight: FontWeight.w400,
+  color: ColorsGrey300,
 );
 
 const Title1TextStyle = TextStyle(

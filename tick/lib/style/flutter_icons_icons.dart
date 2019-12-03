@@ -25,16 +25,17 @@ class FlutterIcons {
   static const _kFontFam = 'FlutterIcons';
 
   static const IconData share_1 = const IconData(0xe800, fontFamily: _kFontFam);
-  static const IconData back = const IconData(0xe801, fontFamily: _kFontFam);
-  static const IconData darkmode = const IconData(0xe802, fontFamily: _kFontFam);
-  static const IconData delete = const IconData(0xe803, fontFamily: _kFontFam);
-  static const IconData edit = const IconData(0xe804, fontFamily: _kFontFam);
-  static const IconData save = const IconData(0xe805, fontFamily: _kFontFam);
+  static const IconData at = const IconData(0xe801, fontFamily: _kFontFam);
+  static const IconData back = const IconData(0xe802, fontFamily: _kFontFam);
+  static const IconData darkmode = const IconData(0xe803, fontFamily: _kFontFam);
+  static const IconData delete = const IconData(0xe804, fontFamily: _kFontFam);
+  static const IconData edit = const IconData(0xe805, fontFamily: _kFontFam);
   static const IconData notifications = const IconData(0xe806, fontFamily: _kFontFam);
-  static const IconData share = const IconData(0xe807, fontFamily: _kFontFam);
+  static const IconData save = const IconData(0xe807, fontFamily: _kFontFam);
   static const IconData search = const IconData(0xe808, fontFamily: _kFontFam);
   static const IconData star = const IconData(0xe809, fontFamily: _kFontFam);
-  static const IconData tabaccount = const IconData(0xe80a, fontFamily: _kFontFam);
-  static const IconData tabdiscover = const IconData(0xe80b, fontFamily: _kFontFam);
-  static const IconData tabnotes = const IconData(0xe80c, fontFamily: _kFontFam);
+  static const IconData share = const IconData(0xe80a, fontFamily: _kFontFam);
+  static const IconData tabaccount = const IconData(0xe80b, fontFamily: _kFontFam);
+  static const IconData tabdiscover = const IconData(0xe80d, fontFamily: _kFontFam);
+  static const IconData tabnotes = const IconData(0xe80f, fontFamily: _kFontFam);
 }

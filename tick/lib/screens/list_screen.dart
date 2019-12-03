@@ -59,7 +59,8 @@ class _ListScreenState extends State<ListScreen> {
         child: Icon(Icons.add),
         backgroundColor: ColorsWhite,
         onPressed: () {
-          // print('add note');
+          print('add note');
+          Navigator.pushNamed(context, '/create');
         },
       ),
     );

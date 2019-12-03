@@ -35,7 +35,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar>
         child: Material(
           child: Padding(
             padding: const EdgeInsets.only(
-                bottom: 10.0, top: 10.0, left: 12.0, right: 12.0),
+                bottom: 12.0, top: 12.0, left: 12.0, right: 12.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -62,7 +62,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar>
           });
         },
         child: AnimatedContainer(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
           decoration: BoxDecoration(
               color:
                   isSelected ? item.color.withOpacity(0.1) : Colors.transparent,
@@ -73,7 +73,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar>
               Icon(
                 item.icon,
                 color: isSelected ? item.color : Colors.grey[600],
-                size: 30.0,
+                size: 26.0,
               ),
               SizedBox(
                 width: 10.0,
