@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tick/models/user_model.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/style/style.dart';
-import 'package:tick/widgets/circleImage.dart';
+import 'package:tick/widgets/category_selector.dart';
+import 'package:tick/widgets/lists_list.dart';
 
 class ListScreen extends StatefulWidget {
   @override
@@ -10,39 +11,48 @@ class ListScreen extends StatefulWidget {
 }
 
 class _ListScreenState extends State<ListScreen> {
-  final String profileImage =
-      "https://www.gravatar.com/avatar/853a4092fdf3d8d3ed0ebd6b16aeff9f?s=80";
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsLightBackground,
-      body: ListView(
-        physics: AlwaysScrollableScrollPhysics(),
+      body: Column(
         children: <Widget>[
           SizedBox(
-            height: 40.0,
+            height: 60.0,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Text(
-                'LISTS',
-                style: TextStyle(fontFamily: 'Oswald', fontSize: 42.0),
-              ),
-              Row(
-                children: <Widget>[
-                  IconButton(
-                    icon: Icon(FlutterIcons.notifications),
-                    iconSize: 24.0,
-                  ),
-                  // Image(
-                  //   image: AssetImage(currentUser.imageUrl),
-                  // ),
-                ],
-              )
-            ],
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'LISTS',
+                  style: TextStyle(fontFamily: 'Oswald', fontSize: 42.0),
+                ),
+                Row(
+                  children: <Widget>[
+                    IconButton(
+                      icon: Icon(FlutterIcons.notifications),
+                      iconSize: 32.0,
+                      onPressed: () {
+                        print('open notifications tab');
+                      },
+                    ),
+                    SizedBox(
+                      width: 42.0,
+                    ),
+                    CircleAvatar(
+                      radius: 20.0,
+                      backgroundImage: AssetImage(currentUser.imageUrl),
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
+          CategorySelector(),
+          ListsList(),
         ],
       ),
       floatingActionButton: FloatingActionButton(

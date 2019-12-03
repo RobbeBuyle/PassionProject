@@ -20,7 +20,7 @@ class User {
 final User currentUser = User(
     id: 0,
     name: 'Myriam.dietchy',
-    imageUrl: 'assets/images/users/myriam.jpg',
+    imageUrl: 'assets/images/myriam.jpg',
     email: 'myriam.dietchy@yahoo.com',
     statsNotes: 34,
     statsSaves: 112,

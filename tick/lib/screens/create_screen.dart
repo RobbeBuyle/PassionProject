@@ -9,22 +9,7 @@ class _CreateScreenState extends State<CreateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'CREATE',
-          style: TextStyle(
-              fontSize: 42.0,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Oswald'),
-        ),
-        elevation: 0.0,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.notifications),
-            iconSize: 24.0,
-          )
-        ],
-      ),
+      appBar: AppBar(),
     );
   }
 }

@@ -33,7 +33,7 @@ const AppBarTextStyle = TextStyle(
 
 const TitleTextStyle = TextStyle(
   fontFamily: FontNameDefault,
-  fontSize: 22.0,
+  fontSize: 24.0,
   fontWeight: FontWeight.w700,
   color: Colors.black,
 );
@@ -44,3 +44,21 @@ const Body1TextStyle = TextStyle(
   fontWeight: FontWeight.w400,
   color: Colors.black,
 );
+
+const Title1TextStyle = TextStyle(
+    fontWeight: FontWeight.w700,
+    color: ColorsBlack,
+    fontSize: 17.0,
+    fontFamily: FontNameDefault);
+
+const AccountNameStyle = TextStyle(
+  fontFamily: FontNameTitle,
+  fontSize: 25.0,
+  color: Colors.black,
+);
+
+const TextButton = TextStyle(
+    fontFamily: FontNameDefault,
+    fontSize: 18.0,
+    color: ColorsPurple,
+    fontWeight: FontWeight.bold);

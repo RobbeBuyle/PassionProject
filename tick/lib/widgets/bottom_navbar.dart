@@ -25,9 +25,9 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar>
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
+              color: Colors.grey.withOpacity(0.05),
               spreadRadius: 1,
-              blurRadius: 5,
+              blurRadius: 4,
               offset: Offset(0, -5.0), // changes position of shadow
             ),
           ],
