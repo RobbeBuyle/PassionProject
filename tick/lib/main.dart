@@ -25,9 +25,6 @@ class MyApp extends StatelessWidget {
     return ThemeData(
       primaryColor: ColorsLightBackground,
       accentColor: ColorsYellow,
-      appBarTheme: AppBarTheme(
-        textTheme: TextTheme(title: AppBarTextStyle),
-      ),
       textTheme: TextTheme(title: TitleTextStyle, body1: Body1TextStyle),
     );
   }

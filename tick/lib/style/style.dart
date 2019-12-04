@@ -23,13 +23,21 @@ const LargeTestSize = 22.0;
 const BodyTextSize = 16.0;
 
 const String FontNameDefault = "Biotif";
-const String FontNameTitle = "Oswald";
 
 const AppBarTextStyle = TextStyle(
-  fontFamily: FontNameTitle,
-  fontSize: 42.0,
+    fontFamily: FontNameDefault,
+    fontWeight: FontWeight.w400,
+    color: ColorsBlack);
+
+const QuoteTextStyle = TextStyle(
+  fontFamily: FontNameDefault,
+  fontSize: 49.0,
+  fontWeight: FontWeight.w400,
   color: ColorsBlack,
 );
+
+const CategorySelectorTextStyle = TextStyle(
+    fontFamily: FontNameDefault, fontSize: 18.0, fontWeight: FontWeight.w500);
 
 const TitleTextStyle = TextStyle(
   fontFamily: FontNameDefault,
@@ -66,7 +74,7 @@ const Title1TextStyle = TextStyle(
     fontFamily: FontNameDefault);
 
 const AccountNameStyle = TextStyle(
-  fontFamily: FontNameTitle,
+  fontFamily: FontNameDefault,
   fontSize: 25.0,
   color: Colors.black,
 );

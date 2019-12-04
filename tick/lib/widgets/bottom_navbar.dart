@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tick/style/style.dart';
 
 class AnimatedBottomBar extends StatefulWidget {
   final List<BarItem> barItems;
@@ -22,17 +23,8 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.05),
-              spreadRadius: 1,
-              blurRadius: 4,
-              offset: Offset(0, -5.0), // changes position of shadow
-            ),
-          ],
-        ),
         child: Material(
+          color: ColorsLightBackground,
           child: Padding(
             padding: const EdgeInsets.only(
                 bottom: 12.0, top: 12.0, left: 12.0, right: 12.0),
@@ -63,17 +55,13 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar>
         },
         child: AnimatedContainer(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
-          decoration: BoxDecoration(
-              color:
-                  isSelected ? item.color.withOpacity(0.1) : Colors.transparent,
-              borderRadius: BorderRadius.circular(30)),
           duration: widget.animationDuration,
           child: Row(
             children: <Widget>[
               Icon(
                 item.icon,
                 color: isSelected ? item.color : Colors.grey[600],
-                size: 26.0,
+                size: 22.0,
               ),
               SizedBox(
                 width: 10.0,

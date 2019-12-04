@@ -41,8 +41,8 @@ class _CategorySelectorState extends State<CategorySelector> {
                   style: TextStyle(
                       color:
                           index == selectedIndex ? ColorsYellow : ColorsGrey300,
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.bold),
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500),
                 ),
               ),
             );

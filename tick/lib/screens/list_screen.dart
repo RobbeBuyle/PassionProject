@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:tick/models/checklist_model.dart';
 import 'package:tick/models/user_model.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/style/style.dart';
 import 'package:tick/widgets/category_selector.dart';
-import 'package:tick/widgets/lists_list.dart';
+import 'package:tick/widgets/homescreen_quote.dart';
+import 'package:tick/models/user_model.dart';
+
+abstract class ListItem {}
 
 class ListScreen extends StatefulWidget {
   @override
@@ -15,45 +19,56 @@ class _ListScreenState extends State<ListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsLightBackground,
-      body: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 60.0,
+      appBar: AppBar(
+        title: Text(
+          'Hi, ${currentUser.name}',
+          style: AppBarTextStyle,
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(FlutterIcons.notifications),
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'LISTS',
-                  style: TextStyle(fontFamily: 'Oswald', fontSize: 42.0),
-                ),
-                Row(
-                  children: <Widget>[
-                    IconButton(
-                      icon: Icon(FlutterIcons.notifications),
-                      iconSize: 32.0,
-                      onPressed: () {
-                        print('open notifications tab');
-                      },
-                    ),
-                    SizedBox(
-                      width: 42.0,
-                    ),
-                    CircleAvatar(
-                      radius: 20.0,
-                      backgroundImage: AssetImage(currentUser.imageUrl),
-                    )
-                  ],
-                ),
-              ],
+          SizedBox(
+            width: 32.0,
+          ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10.0),
+            child: Image.asset(
+              currentUser.imageUrl,
+              height: 36.0,
+              width: 36.0,
             ),
           ),
-          CategorySelector(),
-          ListsList(),
         ],
+        elevation: 0.0,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 14.0),
+        child: CustomScrollView(
+          slivers: <Widget>[
+            SliverToBoxAdapter(
+              child: HomescreenQuote(),
+            ),
+            SliverToBoxAdapter(
+              child: CategorySelector(),
+            ),
+            SliverGrid(
+              delegate: SliverChildBuilderDelegate((context, index) {
+                //HERE COMES THE CUSTOM CODE FOR OUT LIST PREVIEWS
+                return Container(
+                  alignment: Alignment.center,
+                  color: Colors.teal[100 * (index % 9)],
+                  child: Text('grid item $index'),
+                );
+              }, childCount: 30),
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 200.0,
+                  mainAxisSpacing: 10.0,
+                  crossAxisSpacing: 10.0,
+                  childAspectRatio: 4.0),
+            )
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
