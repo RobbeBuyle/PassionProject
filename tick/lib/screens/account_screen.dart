@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:tick/models/user_model.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/style/style.dart';
-import 'package:tick/widgets/account_information.dart';
-import 'package:tick/widgets/settings_information.dart';
-import 'package:tick/widgets/stat_rect.dart';
+import 'package:tick/widgets/sections/account_information.dart';
+import 'package:tick/widgets/sections/settings_information.dart';
+import 'package:tick/widgets/elements/stat_rect.dart';
 
 class AccountScreen extends StatefulWidget {
   @override
@@ -16,6 +16,14 @@ class _AccountScreenState extends State<AccountScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsLightBackground,
+      appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(FlutterIcons.edit),
+          ),
+        ],
+        elevation: 0.0,
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12.0),
         child: ListView(
@@ -25,23 +33,6 @@ class _AccountScreenState extends State<AccountScreen> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      IconButton(
-                        icon: Icon(FlutterIcons.edit),
-                        iconSize: 24.0,
-                        onPressed: () {
-                          print('edit account info');
-                        },
-                      ),
-                    ],
-                  ),
-                ],
-              ),
             ),
             Column(
               children: <Widget>[
@@ -55,7 +46,7 @@ class _AccountScreenState extends State<AccountScreen> {
                         width: 92.0,
                       ),
                     )),
-                Text(currentUser.name.toUpperCase(), style: AccountNameStyle),
+                Text(currentUser.name, style: AccountNameStyle),
               ],
             ),
             Padding(

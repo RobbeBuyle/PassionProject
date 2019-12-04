@@ -42,7 +42,7 @@ const CategorySelectorTextStyle = TextStyle(
 const TitleTextStyle = TextStyle(
   fontFamily: FontNameDefault,
   fontSize: 24.0,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.w400,
   color: ColorsBlack,
 );
 
@@ -83,4 +83,11 @@ const TextButton = TextStyle(
     fontFamily: FontNameDefault,
     fontSize: 18.0,
     color: ColorsPurple,
-    fontWeight: FontWeight.bold);
+    fontWeight: FontWeight.w600);
+
+const TagTextStyle = TextStyle(
+  fontFamily: FontNameDefault,
+  fontSize: 22.0,
+  color: ColorsWhite,
+  fontWeight: FontWeight.w700,
+);

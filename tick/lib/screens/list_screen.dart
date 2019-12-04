@@ -3,8 +3,8 @@ import 'package:tick/models/checklist_model.dart';
 import 'package:tick/models/user_model.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/style/style.dart';
-import 'package:tick/widgets/category_selector.dart';
-import 'package:tick/widgets/homescreen_quote.dart';
+import 'package:tick/widgets/sections/category_selector.dart';
+import 'package:tick/widgets/sections/homescreen_quote.dart';
 import 'package:tick/models/user_model.dart';
 
 abstract class ListItem {}
@@ -61,8 +61,8 @@ class _ListScreenState extends State<ListScreen> {
                   child: Text('grid item $index'),
                 );
               }, childCount: 30),
-              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 200.0,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
                   mainAxisSpacing: 10.0,
                   crossAxisSpacing: 10.0,
                   childAspectRatio: 4.0),

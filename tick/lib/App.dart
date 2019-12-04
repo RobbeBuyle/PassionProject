@@ -4,7 +4,7 @@ import 'package:tick/screens/create_screen.dart';
 import 'package:tick/screens/discover_screen.dart';
 import 'package:tick/screens/list_screen.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
-import 'package:tick/widgets/bottom_navbar.dart';
+import 'package:tick/widgets/elements/bottom_navbar.dart';
 import 'package:tick/style/style.dart';
 
 class App extends StatefulWidget {
@@ -23,17 +23,26 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: [ListScreen(), DiscoverScreen(), AccountScreen(), CreateScreen()]
-          .elementAt(_selectedIndex),
-      bottomNavigationBar: AnimatedBottomBar(
-          barItems: widget.barItems,
-          animationDuration: const Duration(milliseconds: 200),
-          onBarTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          }),
+    return Container(
+      color: ColorsLightBackground,
+      child: SafeArea(
+        child: Scaffold(
+          body: [
+            ListScreen(),
+            DiscoverScreen(),
+            AccountScreen(),
+            CreateScreen()
+          ].elementAt(_selectedIndex),
+          bottomNavigationBar: AnimatedBottomBar(
+              barItems: widget.barItems,
+              animationDuration: const Duration(milliseconds: 200),
+              onBarTap: (index) {
+                setState(() {
+                  _selectedIndex = index;
+                });
+              }),
+        ),
+      ),
     );
   }
 }

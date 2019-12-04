@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/style/style.dart';
-import 'package:tick/widgets/trending_carousel.dart';
+import 'package:tick/widgets/cards/topic_tag.dart';
+import 'package:tick/widgets/sections/trending_carousel.dart';
 
 class DiscoverScreen extends StatefulWidget {
   @override
@@ -12,23 +14,26 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsLightBackground,
+      appBar: AppBar(
+        title: Text(
+          'Discover',
+          style: AppBarTextStyle,
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(FlutterIcons.search),
+          ),
+        ],
+        elevation: 0.0,
+      ),
       body: Column(
         children: <Widget>[
           SizedBox(
-            height: 60.0,
+            height: 32.0,
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'DISCOVER',
-                  style: TextStyle(fontFamily: 'Oswald', fontSize: 42.0),
-                ),
-              ],
-            ),
+          TopicTag(),
+          SizedBox(
+            height: 32.0,
           ),
           TrendingCarousel(),
         ],
