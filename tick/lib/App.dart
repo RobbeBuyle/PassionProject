@@ -8,6 +8,8 @@ import 'package:tick/widgets/elements/bottom_navbar.dart';
 import 'package:tick/style/style.dart';
 
 class App extends StatefulWidget {
+  static final String id = 'app_screen';
+
   final List<BarItem> barItems = [
     BarItem(text: "lists", icon: FlutterIcons.tabnotes, color: ColorsYellow),
     BarItem(

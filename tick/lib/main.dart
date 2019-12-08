@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tick/screens/create_screen.dart';
 import 'package:tick/screens/login_screen.dart';
@@ -8,6 +9,19 @@ import 'style/style.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  Widget _getScreenId() {
+    return StreamBuilder<FirebaseUser>(
+      stream: FirebaseAuth.instance.onAuthStateChanged,
+      builder: (BuildContext context, snapshot) {
+        if (snapshot.hasData) {
+          return App();
+        } else {
+          return LoginScreen();
+        }
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,11 +30,12 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => LoginScreen(),
+        '/': (context) => _getScreenId(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/create': (context) => CreateScreen(),
         LoginScreen.id: (context) => LoginScreen(),
         SignUpScreen.id: (context) => SignUpScreen(),
+        App.id: (context) => App(),
       },
     );
   }

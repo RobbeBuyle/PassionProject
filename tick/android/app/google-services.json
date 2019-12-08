@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "412086930277",
+    "firebase_url": "https://tick-ac4f4.firebaseio.com",
+    "project_id": "tick-ac4f4",
+    "storage_bucket": "tick-ac4f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412086930277:android:731af0c16905a602d5ef8c",
+        "android_client_info": {
+          "package_name": "com.example.tick"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412086930277-pkpadohtquf7j438uab6r5amtoq90vho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8DRX3HWxTFigoB1J2rGbImK00Ch9G3f8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412086930277-pkpadohtquf7j438uab6r5amtoq90vho.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "412086930277-hgo5iptnq7omu1v3r2p7af0ahb6bo47r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "be.devine.tick"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
