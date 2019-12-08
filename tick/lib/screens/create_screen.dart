@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tick/style/flutter_icons_icons.dart';
+import 'package:tick/style/style.dart';
+import 'package:tick/widgets/sections/list_form.dart';
 
 class CreateScreen extends StatefulWidget {
   @override
@@ -9,7 +12,22 @@ class _CreateScreenState extends State<CreateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(
+          'new list',
+          style: AppBarTextStyle,
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              FlutterIcons.save,
+              color: ColorsBlack,
+            ),
+          ),
+        ],
+        elevation: 0.0,
+      ),
+      body: ListForm(),
     );
   }
 }

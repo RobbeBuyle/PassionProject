@@ -3,9 +3,11 @@ import 'package:tick/models/checklist_model.dart';
 import 'package:tick/models/user_model.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/style/style.dart';
+import 'package:tick/widgets/cards/list_preview.dart';
 import 'package:tick/widgets/sections/category_selector.dart';
 import 'package:tick/widgets/sections/homescreen_quote.dart';
 import 'package:tick/models/user_model.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 abstract class ListItem {}
 
@@ -20,9 +22,12 @@ class _ListScreenState extends State<ListScreen> {
     return Scaffold(
       backgroundColor: ColorsLightBackground,
       appBar: AppBar(
-        title: Text(
-          'Hi, ${currentUser.name}',
-          style: AppBarTextStyle,
+        title: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Hi, ${currentUser.name}',
+            style: AppBarTextStyle,
+          ),
         ),
         actions: <Widget>[
           IconButton(
@@ -55,12 +60,16 @@ class _ListScreenState extends State<ListScreen> {
             SliverGrid(
               delegate: SliverChildBuilderDelegate((context, index) {
                 //HERE COMES THE CUSTOM CODE FOR OUT LIST PREVIEWS
-                return Container(
-                  alignment: Alignment.center,
-                  color: Colors.teal[100 * (index % 9)],
-                  child: Text('grid item $index'),
+                CheckList checkList = lists[index];
+                // return Container(
+                //   alignment: Alignment.center,
+                //   color: Colors.teal[100 * (index % 9)],
+                //   child: Text('grid item $index'),
+                // );
+                return ListPreview(
+                  checkList: checkList,
                 );
-              }, childCount: 30),
+              }, childCount: lists.length),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 10.0,
@@ -71,7 +80,7 @@ class _ListScreenState extends State<ListScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: SvgPicture.asset('assets/images/AddSymbol.svg'),
         backgroundColor: ColorsWhite,
         onPressed: () {
           print('add note');

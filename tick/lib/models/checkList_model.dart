@@ -15,6 +15,10 @@ class CheckList implements ListItem {
 
   CheckList(
       {this.author, this.title, this.tag, this.check, this.date, this.saves});
+
+  save() {
+    print('save ${this.title} list using FireBase');
+  }
 }
 
 //USERS

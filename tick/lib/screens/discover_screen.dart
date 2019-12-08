@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/style/style.dart';
 import 'package:tick/widgets/cards/topic_tag.dart';
-import 'package:tick/widgets/sections/trending_carousel.dart';
+import 'package:tick/widgets/sections/discover_carousel.dart';
 
 class DiscoverScreen extends StatefulWidget {
   @override
@@ -26,16 +26,15 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
         ],
         elevation: 0.0,
       ),
-      body: Column(
+      body: ListView(
         children: <Widget>[
           SizedBox(
             height: 32.0,
           ),
           TopicTag(),
-          SizedBox(
-            height: 32.0,
-          ),
-          TrendingCarousel(),
+          DiscoverCarousel(),
+          DiscoverCarousel(),
+          DiscoverCarousel(),
         ],
       ),
     );

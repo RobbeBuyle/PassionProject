@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tick/screens/create_screen.dart';
+import 'package:tick/screens/login_screen.dart';
+import 'package:tick/screens/signup_screen.dart';
 import 'App.dart';
 import 'style/style.dart';
 
@@ -14,9 +16,11 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => App(),
+        '/': (context) => LoginScreen(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/create': (context) => CreateScreen(),
+        LoginScreen.id: (context) => LoginScreen(),
+        SignUpScreen.id: (context) => SignUpScreen(),
       },
     );
   }
