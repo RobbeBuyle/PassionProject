@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tick/models/user_model.dart';
+import 'package:tick/services/auth_service.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/style/style.dart';
 import 'package:tick/widgets/sections/account_information.dart';
@@ -80,6 +81,13 @@ class _AccountScreenState extends State<AccountScreen> {
               height: 36.0,
             ),
             SettingsInformation(),
+            SizedBox(
+              height: 40.0,
+            ),
+            FlatButton(
+              child: Text('Log Out'),
+              onPressed: () => AuthService.logout(context),
+            )
           ],
         ),
       ),

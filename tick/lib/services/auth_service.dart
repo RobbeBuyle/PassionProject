@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tick/App.dart';
+import 'package:tick/screens/login_screen.dart';
 
 class AuthService {
   static final _auth = FirebaseAuth.instance;
@@ -24,5 +25,10 @@ class AuthService {
     } catch (e) {
       print(e);
     }
+  }
+
+  static void logout(BuildContext context) {
+    _auth.signOut();
+    Navigator.pushReplacementNamed(context, LoginScreen.id);
   }
 }

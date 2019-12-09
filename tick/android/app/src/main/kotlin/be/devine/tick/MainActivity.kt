@@ -1,4 +1,4 @@
-package com.example.tick
+package be.devine.tick
 
 import android.os.Bundle
 

@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:412086930277:android:731af0c16905a602d5ef8c",
+        "mobilesdk_app_id": "1:412086930277:android:abb2d33944b8a500d5ef8c",
         "android_client_info": {
-          "package_name": "com.example.tick"
+          "package_name": "be.devine.tick"
         }
       },
       "oauth_client": [
