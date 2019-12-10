@@ -24,7 +24,7 @@ class CheckList implements ListItem {
 //USERS
 
 final User kim = User(
-    id: 0,
+    id: '545dsf4sd5gdfg4152sdg',
     name: 'kim',
     imageUrl: 'assets/images/kim.jpg',
     email: 'kim@yahoo.com',
@@ -33,7 +33,7 @@ final User kim = User(
     statsChecks: 248);
 
 final User olivia = User(
-    id: 1,
+    id: '545dsf4sd5gdfg4152sdk',
     name: 'olivia',
     imageUrl: 'assets/images/olivia.jpg',
     email: 'olivia@yahoo.com',
@@ -42,7 +42,7 @@ final User olivia = User(
     statsChecks: 248);
 
 final User tim = User(
-    id: 2,
+    id: '545dsf4sd5gdfg4152sdt',
     name: 'tim',
     imageUrl: 'assets/images/tim.jpg',
     email: 'tim@yahoo.com',
@@ -51,7 +51,7 @@ final User tim = User(
     statsChecks: 248);
 
 final User myriam = User(
-    id: 3,
+    id: '545dsf4sd5gdfg4152sdg',
     name: 'myriam',
     imageUrl: 'assets/images/myriam.jpg',
     email: 'myriam@yahoo.com',

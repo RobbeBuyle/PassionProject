@@ -9,6 +9,9 @@ import 'package:tick/style/style.dart';
 
 class App extends StatefulWidget {
   static final String id = 'app_screen';
+  final String userId;
+
+  App({this.userId});
 
   final List<BarItem> barItems = [
     BarItem(text: "lists", icon: FlutterIcons.tabnotes, color: ColorsYellow),
@@ -32,7 +35,9 @@ class _AppState extends State<App> {
           body: [
             ListScreen(),
             DiscoverScreen(),
-            AccountScreen(),
+            AccountScreen(
+              userId: widget.userId,
+            ),
             CreateScreen()
           ].elementAt(_selectedIndex),
           bottomNavigationBar: AnimatedBottomBar(

@@ -5,6 +5,10 @@ import 'package:tick/style/style.dart';
 import 'package:tick/widgets/elements/settings_rect.dart';
 
 class AccountInformation extends StatelessWidget {
+  final User user;
+
+  AccountInformation({this.user});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,7 +38,7 @@ class AccountInformation extends StatelessWidget {
                   style: Body1BoldTextStyle,
                 ),
                 Text(
-                  currentUser.email,
+                  user.email,
                   style: Body1LightTextStyle,
                 )
               ],
@@ -58,7 +62,7 @@ class AccountInformation extends StatelessWidget {
                   style: Body1BoldTextStyle,
                 ),
                 Text(
-                  currentUser.name,
+                  user.name,
                   style: Body1LightTextStyle,
                 )
               ],
