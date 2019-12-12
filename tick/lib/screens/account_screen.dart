@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tick/models/user_model.dart';
+import 'package:tick/screens/edit_profile_screen.dart';
 import 'package:tick/services/auth_service.dart';
-import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/style/style.dart';
 import 'package:tick/utilities/constants.dart';
 import 'package:tick/widgets/sections/account_information.dart';
@@ -23,11 +23,7 @@ class _AccountScreenState extends State<AccountScreen> {
     return Scaffold(
       backgroundColor: ColorsLightBackground,
       appBar: AppBar(
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(FlutterIcons.edit),
-          ),
-        ],
+        backgroundColor: ColorsLightBackground,
         elevation: 0.0,
       ),
       body: Padding(
@@ -66,10 +62,26 @@ class _AccountScreenState extends State<AccountScreen> {
                           ),
                         )),
                     Text(user.name, style: AccountNameStyle),
+                    SizedBox(
+                      height: 8.0,
+                    ),
+                    FlatButton(
+                      color: Colors.transparent,
+                      child: Text(
+                        'Edit profile',
+                        style: TextStyle(color: ColorsGrey300),
+                      ),
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => EditProfileScreen(
+                                    user: user,
+                                  ))),
+                    )
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0.0, 36.0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(0.0, 32.0, 0, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -104,7 +116,7 @@ class _AccountScreenState extends State<AccountScreen> {
                 ),
                 FlatButton(
                   child: Text('Log Out'),
-                  onPressed: () => AuthService.logout(context),
+                  onPressed: () => AuthService.logout(),
                 )
               ],
             );

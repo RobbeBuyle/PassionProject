@@ -15,17 +15,17 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
     return Scaffold(
       backgroundColor: ColorsLightBackground,
       appBar: AppBar(
-        title: Text(
-          'Discover',
-          style: AppBarTextStyle,
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(FlutterIcons.search),
+          title: Text(
+            'Discover',
+            style: AppBarTextStyle,
           ),
-        ],
-        elevation: 0.0,
-      ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(FlutterIcons.search),
+            ),
+          ],
+          elevation: 0.0,
+          backgroundColor: ColorsLightBackground),
       body: ListView(
         children: <Widget>[
           SizedBox(

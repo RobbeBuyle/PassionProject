@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tick/services/auth_service.dart';
-import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/style/style.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -22,7 +21,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       print(_email);
       print(_password);
       print(_name);
-
       AuthService.signUpUser(context, _name, _email, _password);
     }
   }
@@ -36,6 +34,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           style: AppBarTextStyle,
         ),
         elevation: 0.0,
+        backgroundColor: ColorsLightBackground,
       ),
       body: SingleChildScrollView(
         child: Container(

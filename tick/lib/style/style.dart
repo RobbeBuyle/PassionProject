@@ -85,6 +85,12 @@ const TextButton = TextStyle(
     color: ColorsPurple,
     fontWeight: FontWeight.w600);
 
+const secondaryButtonTextStyle = TextStyle(
+  color: ColorsBlue,
+  fontWeight: FontWeight.w400,
+  fontSize: 15.0,
+);
+
 const TagTextStyle = TextStyle(
   fontFamily: FontNameDefault,
   fontSize: 22.0,

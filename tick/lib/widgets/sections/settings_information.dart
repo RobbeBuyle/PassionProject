@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tick/models/user_model.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/style/style.dart';
 import 'package:tick/widgets/elements/settings_rect.dart';

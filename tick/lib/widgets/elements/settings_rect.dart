@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tick/style/flutter_icons_icons.dart';
 
 class SettingsRect extends StatelessWidget {
   final IconData icon;

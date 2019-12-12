@@ -3,12 +3,18 @@ import 'dart:math';
 
 import 'package:tick/style/style.dart';
 
-class HomescreenQuote extends StatelessWidget {
-  final List<String> quotes = [
+class HomescreenQuote extends StatefulWidget {
+  @override
+  _HomescreenQuoteState createState() => _HomescreenQuoteState();
+}
+
+class _HomescreenQuoteState extends State<HomescreenQuote> {
+  List<String> quotes = [
     'Productivity Is Key!',
     'Now Is The Time To Shine!',
     'Keep Smashing It!'
   ];
+
   var randomIndex = Random();
 
   @override

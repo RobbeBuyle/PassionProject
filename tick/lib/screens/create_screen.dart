@@ -26,6 +26,7 @@ class _CreateScreenState extends State<CreateScreen> {
           ),
         ],
         elevation: 0.0,
+        backgroundColor: ColorsLightBackground,
       ),
       body: ListForm(),
     );

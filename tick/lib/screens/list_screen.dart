@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:tick/models/checklist_model.dart';
 import 'package:tick/models/user_model.dart';
+import 'package:tick/services/auth_service.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/style/style.dart';
 import 'package:tick/widgets/cards/list_preview.dart';
 import 'package:tick/widgets/sections/category_selector.dart';
 import 'package:tick/widgets/sections/homescreen_quote.dart';
-import 'package:tick/models/user_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 abstract class ListItem {}
 
 class ListScreen extends StatefulWidget {
+  static final String id = 'list_screen';
+
   @override
   _ListScreenState createState() => _ListScreenState();
 }
@@ -46,6 +48,7 @@ class _ListScreenState extends State<ListScreen> {
           ),
         ],
         elevation: 0.0,
+        backgroundColor: ColorsLightBackground,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 14.0),
@@ -56,6 +59,12 @@ class _ListScreenState extends State<ListScreen> {
             ),
             SliverToBoxAdapter(
               child: CategorySelector(),
+            ),
+            SliverToBoxAdapter(
+              child: FlatButton(
+                child: Text('Log Out'),
+                onPressed: () => AuthService.logout(),
+              ),
             ),
             SliverGrid(
               delegate: SliverChildBuilderDelegate((context, index) {

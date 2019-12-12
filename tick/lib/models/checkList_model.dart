@@ -1,8 +1,6 @@
 import 'package:tick/models/user_model.dart';
 import 'package:tick/screens/list_screen.dart';
 
-import 'check_model.dart';
-
 class CheckList implements ListItem {
   final User author;
 

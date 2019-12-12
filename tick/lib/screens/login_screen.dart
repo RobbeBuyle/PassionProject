@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tick/main.dart';
 import 'package:tick/screens/signup_screen.dart';
 import 'package:tick/services/auth_service.dart';
 import 'package:tick/style/style.dart';
@@ -20,7 +21,9 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
       // Logging in the user w/ Firebase
-      AuthService.login(context, _email, _password);
+      AuthService.login(_email, _password);
+      // MyApp();
+      // print('run myapp');
     }
   }
 

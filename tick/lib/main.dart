@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tick/screens/create_screen.dart';
+import 'package:tick/screens/list_screen.dart';
 import 'package:tick/screens/login_screen.dart';
 import 'package:tick/screens/signup_screen.dart';
 import 'App.dart';
@@ -14,11 +15,13 @@ class MyApp extends StatelessWidget {
       stream: FirebaseAuth.instance.onAuthStateChanged,
       builder: (BuildContext context, snapshot) {
         if (snapshot.hasData) {
+          print(snapshot.data.uid);
           return App(
             userId: snapshot.data.uid,
           );
         } else {
           return LoginScreen();
+          // print('no data');
         }
       },
     );
@@ -29,14 +32,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Tick',
       theme: _configureThemeData(),
-      initialRoute: '/',
+      home: _getScreenId(),
       routes: {
-        // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => _getScreenId(),
-        // When navigating to the "/second" route, build the SecondScreen widget.
         '/create': (context) => CreateScreen(),
         LoginScreen.id: (context) => LoginScreen(),
         SignUpScreen.id: (context) => SignUpScreen(),
+        ListScreen.id: (context) => ListScreen(),
         App.id: (context) => App(),
       },
     );
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
 
   ThemeData _configureThemeData() {
     return ThemeData(
-      primaryColor: ColorsLightBackground,
+      primaryColor: ColorsGrey300,
       accentColor: ColorsYellow,
       textTheme: TextTheme(title: TitleTextStyle, body1: Body1TextStyle),
     );
