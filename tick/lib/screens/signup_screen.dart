@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tick/services/auth_service.dart';
-import 'package:tick/style/style.dart';
+import 'package:tick/style/text_style.dart';
+import 'package:tick/style/color_style.dart';
 
 class SignUpScreen extends StatefulWidget {
   static final id = 'signup_screen';

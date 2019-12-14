@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tick/style/style.dart';
+import 'package:tick/style/color_style.dart';
 
 class AnimatedBottomBar extends StatefulWidget {
   final List<BarItem> barItems;

@@ -1,22 +1,5 @@
 import 'package:flutter/material.dart';
-
-//COLORS
-
-const ColorsWhite = Color(0xFFFFFFFF);
-const ColorsBlack = Color(0xFF090909);
-
-const ColorsLightBackground = Color(0xFFF8F9F9);
-const ColorsDarkBackground = Color(0xFF080808);
-
-const ColorsYellow = Color(0xFFFF9E00);
-const ColorsBlue = Color(0xFF63A1FC);
-const ColorsPurple = Color(0xFF6745BF);
-
-const ColorsGrey600 = Color(0xFF222222);
-const ColorsGrey500 = Color(0xFF323232);
-const ColorsGrey400 = Color(0xFF6D6D6D);
-const ColorsGrey300 = Color(0xFFAFAFAF);
-
+import 'package:tick/style/color_style.dart';
 //TEXT STYLES
 
 const LargeTestSize = 22.0;
@@ -37,8 +20,21 @@ const QuoteTextStyle = TextStyle(
   color: ColorsBlack,
 );
 
-const CategorySelectorTextStyle = TextStyle(
-    fontFamily: FontNameDefault, fontSize: 18.0, fontWeight: FontWeight.w500);
+const CategoryUnselected = TextStyle(
+  fontFamily: FontNameDefault,
+  fontSize: 18.0,
+  fontWeight: FontWeight.w500,
+  color: ColorsGrey300,
+);
+
+const CategorySelected = TextStyle(
+  fontFamily: FontNameDefault,
+  fontSize: 18.0,
+  fontWeight: FontWeight.w500,
+  color: ColorsYellow,
+);
+
+const CategorySelectorTextStyle = TextStyle();
 
 const TitleTextStyle = TextStyle(
   fontFamily: FontNameDefault,
@@ -59,6 +55,20 @@ const Body1TextStyle = TextStyle(
   fontSize: 16.0,
   fontWeight: FontWeight.w400,
   color: Colors.black,
+);
+
+const Body1TextStyleWhite = TextStyle(
+  fontFamily: FontNameDefault,
+  fontSize: 16.0,
+  fontWeight: FontWeight.w400,
+  color: Colors.white,
+);
+
+const Body1TextStylePurple = TextStyle(
+  fontFamily: FontNameDefault,
+  fontSize: 16.0,
+  fontWeight: FontWeight.w400,
+  color: ColorsPurple,
 );
 
 const Body1LightTextStyle = TextStyle(

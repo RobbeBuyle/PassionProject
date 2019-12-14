@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tick/screens/account_screen.dart';
 import 'package:tick/screens/create_screen.dart';
 import 'package:tick/screens/discover_screen.dart';
 import 'package:tick/screens/list_screen.dart';
+import 'package:tick/style/color_style.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/widgets/elements/bottom_navbar.dart';
-import 'package:tick/style/style.dart';
+
+import 'models/user_data.dart';
 
 class App extends StatefulWidget {
   static final String id = 'app_screen';
-  final String userId;
-
-  App({this.userId});
 
   final List<BarItem> barItems = [
     BarItem(text: "lists", icon: FlutterIcons.tabnotes, color: ColorsYellow),
@@ -36,7 +36,7 @@ class _AppState extends State<App> {
             ListScreen(),
             DiscoverScreen(),
             AccountScreen(
-              userId: widget.userId,
+              userId: Provider.of<UserData>(context).currentUserId,
             ),
             CreateScreen()
           ].elementAt(_selectedIndex),

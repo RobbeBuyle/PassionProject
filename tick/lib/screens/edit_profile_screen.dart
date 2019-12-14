@@ -7,7 +7,8 @@ import 'package:tick/models/user_model.dart';
 import 'package:tick/services/database_services.dart';
 import 'package:tick/services/storage_service.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
-import 'package:tick/style/style.dart';
+import 'package:tick/style/color_style.dart';
+import 'package:tick/style/text_style.dart';
 
 class EditProfileScreen extends StatefulWidget {
   final User user;

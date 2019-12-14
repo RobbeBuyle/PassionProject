@@ -3,7 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tick/main.dart';
 import 'package:tick/screens/signup_screen.dart';
 import 'package:tick/services/auth_service.dart';
-import 'package:tick/style/style.dart';
+import 'package:tick/style/color_style.dart';
+import 'package:tick/style/text_style.dart';
 
 class LoginScreen extends StatefulWidget {
   static final String id = 'login_screen';
@@ -74,15 +75,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Container(
                       width: 200.0,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30.0)),
                       child: FlatButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(70.0)),
                         onPressed: _submit,
                         color: ColorsPurple,
                         padding: EdgeInsets.all(15.0),
                         child: Text(
                           'Login',
-                          style: Body1TextStyle,
+                          style: Body1TextStyleWhite,
                         ),
                       ),
                     ),
@@ -91,16 +92,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Container(
                       width: 200.0,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30.0)),
                       child: FlatButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(70.0),
+                            side: BorderSide(color: ColorsPurple, width: 1.0)),
                         onPressed: () =>
                             Navigator.pushNamed(context, SignUpScreen.id),
-                        color: ColorsPurple,
                         padding: EdgeInsets.all(15.0),
                         child: Text(
                           'Sign Up',
-                          style: Body1TextStyle,
+                          style: Body1TextStylePurple,
                         ),
                       ),
                     )

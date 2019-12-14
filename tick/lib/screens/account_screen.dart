@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:tick/models/user_model.dart';
 import 'package:tick/screens/edit_profile_screen.dart';
 import 'package:tick/services/auth_service.dart';
-import 'package:tick/style/style.dart';
+import 'package:tick/style/color_style.dart';
+import 'package:tick/style/text_style.dart';
 import 'package:tick/utilities/constants.dart';
 import 'package:tick/widgets/sections/account_information.dart';
 import 'package:tick/widgets/sections/settings_information.dart';
@@ -57,7 +58,7 @@ class _AccountScreenState extends State<AccountScreen> {
                       child: Container(
                         width: 122.0,
                         height: 122.0,
-                        child: new CircleAvatar(
+                        child: CircleAvatar(
                           backgroundColor: ColorsGrey300,
                           backgroundImage: user.imageUrl.isEmpty
                               ? AssetImage('assets/images/user_placeholder.jpg')

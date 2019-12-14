@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
-import 'package:tick/style/style.dart';
+import 'package:tick/style/text_style.dart';
+import 'package:tick/style/color_style.dart';
 import 'package:tick/widgets/cards/topic_tag.dart';
 import 'package:tick/widgets/sections/discover_carousel.dart';
 

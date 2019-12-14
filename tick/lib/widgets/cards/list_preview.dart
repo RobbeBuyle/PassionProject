@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tick/models/checklist_model.dart';
-import 'package:tick/style/style.dart';
+import 'package:tick/style/color_style.dart';
+import 'package:tick/style/text_style.dart';
 
 class ListPreview extends StatelessWidget {
   final CheckList checkList;

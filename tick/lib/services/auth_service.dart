@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tick/App.dart';
+import 'package:tick/models/user_data.dart';
 import 'package:tick/screens/login_screen.dart';
 
 class AuthService {
@@ -21,6 +23,7 @@ class AuthService {
           'profileImageUrl': '',
         });
         // Navigator.pushReplacementNamed(context, App.id);
+        Provider.of<UserData>(context).currentUserId = signedInUser.uid;
         Navigator.pop(context);
       }
     } catch (e) {

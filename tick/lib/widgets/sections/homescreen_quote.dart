@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-import 'package:tick/style/style.dart';
+import 'package:tick/style/text_style.dart';
 
 class HomescreenQuote extends StatefulWidget {
   @override
@@ -21,7 +21,7 @@ class _HomescreenQuoteState extends State<HomescreenQuote> {
   Widget build(BuildContext context) {
     return Container(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(8.0, 40.0, 8.0, 14.0),
+        padding: const EdgeInsets.fromLTRB(20.0, 50.0, 20.0, 20.0),
         child: Text(
           quotes[randomIndex.nextInt(quotes.length)],
           style: QuoteTextStyle,
