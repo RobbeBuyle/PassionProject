@@ -22,6 +22,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   final _formKey = GlobalKey<FormState>();
   String _name = '';
   File _profileImage;
+  bool _isloading = false;
 
   @override
   void initState() {
@@ -58,6 +59,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   _submit() async {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
+
+      setState(() {
+        _isloading = true;
+      });
+
       String _profileImageUrl = '';
 
       if (_profileImage == null) {
@@ -99,56 +105,64 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           ],
           elevation: 0.0,
           backgroundColor: ColorsLightBackground),
-      body: SingleChildScrollView(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          child: Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 24.0, 0, 14.0),
-                    child: Container(
-                      width: 122.0,
-                      height: 122.0,
-                      child: new CircleAvatar(
-                        backgroundColor: ColorsGrey300,
-                        backgroundImage: _displayProfileImage(),
-                      ),
-                    ),
-                  ),
-                  FlatButton(
-                    onPressed: () => _handleImageFromGallery(),
-                    child: Text(
-                      'Change profile image',
-                      style: secondaryButtonTextStyle,
-                    ),
-                    // splashColor: Colors.transparent,
-                  ),
-                  SizedBox(
-                    height: 50.0,
-                  ),
-                  TextFormField(
-                    initialValue: _name,
-                    style: TextStyle(fontSize: 16.0),
-                    decoration: InputDecoration(
-                      icon: Icon(
-                        Icons.person,
-                        size: 28.0,
-                      ),
-                      labelText: 'Username',
-                    ),
-                    validator: (input) => input.trim().length < 1
-                        ? 'Please enter a valid name'
-                        : null,
-                    onSaved: (input) => _name = input,
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: ListView(
+          children: <Widget>[
+            _isloading
+                ? LinearProgressIndicator(
+                    backgroundColor: ColorsBlue.withOpacity(0.2),
+                    valueColor: AlwaysStoppedAnimation(ColorsBlue),
                   )
-                ],
+                : SizedBox.shrink(),
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 24.0, 0, 14.0),
+                      child: Container(
+                        width: 122.0,
+                        height: 122.0,
+                        child: new CircleAvatar(
+                          backgroundColor: ColorsGrey300,
+                          backgroundImage: _displayProfileImage(),
+                        ),
+                      ),
+                    ),
+                    FlatButton(
+                      onPressed: () => _handleImageFromGallery(),
+                      child: Text(
+                        'Change profile image',
+                        style: secondaryButtonTextStyle,
+                      ),
+                      // splashColor: Colors.transparent,
+                    ),
+                    SizedBox(
+                      height: 50.0,
+                    ),
+                    TextFormField(
+                      initialValue: _name,
+                      style: TextStyle(fontSize: 16.0),
+                      decoration: InputDecoration(
+                        icon: Icon(
+                          Icons.person,
+                          size: 28.0,
+                        ),
+                        labelText: 'Username',
+                      ),
+                      validator: (input) => input.trim().length < 1
+                          ? 'Please enter a valid name'
+                          : null,
+                      onSaved: (input) => _name = input,
+                    )
+                  ],
+                ),
               ),
             ),
-          ),
+          ],
         ),
       ),
     );
