@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:tick/models/user_model.dart';
 import 'package:tick/screens/edit_profile_screen.dart';
@@ -39,12 +40,12 @@ class _AccountScreenState extends State<AccountScreen> {
             // print(snapshot.data['name']);
 
             User user = User.fromDoc(snapshot.data);
-            print(user.name);
+            // print(user.name);
 
             return ListView(
               children: <Widget>[
                 SizedBox(
-                  height: 20.0,
+                  height: 8.0,
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12.0),
@@ -52,15 +53,18 @@ class _AccountScreenState extends State<AccountScreen> {
                 Column(
                   children: <Widget>[
                     Padding(
-                        padding: const EdgeInsets.all(24.0),
-                        child: new ClipRRect(
-                          borderRadius: BorderRadius.circular(26.0),
-                          child: Image.asset(
-                            currentUser.imageUrl,
-                            height: 92.0,
-                            width: 92.0,
-                          ),
-                        )),
+                      padding: const EdgeInsets.all(24.0),
+                      child: Container(
+                        width: 122.0,
+                        height: 122.0,
+                        child: new CircleAvatar(
+                          backgroundColor: ColorsGrey300,
+                          backgroundImage: user.imageUrl.isEmpty
+                              ? AssetImage('assets/images/user_placeholder.jpg')
+                              : CachedNetworkImageProvider(user.imageUrl),
+                        ),
+                      ),
+                    ),
                     Text(user.name, style: AccountNameStyle),
                     SizedBox(
                       height: 8.0,

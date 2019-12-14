@@ -1,6 +1,11 @@
+import 'dart:io';
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:tick/models/user_model.dart';
 import 'package:tick/services/database_services.dart';
+import 'package:tick/services/storage_service.dart';
 import 'package:tick/style/flutter_icons_icons.dart';
 import 'package:tick/style/style.dart';
 
@@ -16,6 +21,7 @@ class EditProfileScreen extends StatefulWidget {
 class _EditProfileScreenState extends State<EditProfileScreen> {
   final _formKey = GlobalKey<FormState>();
   String _name = '';
+  File _profileImage;
 
   @override
   void initState() {
@@ -23,10 +29,46 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     _name = widget.user.name;
   }
 
-  _submit() {
+  _handleImageFromGallery() async {
+    print('edit img');
+    File imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
+    if (imageFile != null) {
+      setState(() {
+        _profileImage = imageFile;
+      });
+    }
+  }
+
+  test() {
+    print('allo');
+  }
+
+  _displayProfileImage() {
+    if (_profileImage == null) {
+      if (widget.user.imageUrl.isEmpty) {
+        return AssetImage('assets/images/user_placeholder.jpg');
+      } else {
+        return CachedNetworkImageProvider(widget.user.imageUrl);
+      }
+    } else {
+      return FileImage(_profileImage);
+    }
+  }
+
+  _submit() async {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
       String _profileImageUrl = '';
+
+      if (_profileImage == null) {
+        _profileImageUrl = widget.user.imageUrl;
+      } else {
+        _profileImageUrl = await StorageService.uploadUserProfileImage(
+          widget.user.imageUrl,
+          _profileImage,
+        );
+      }
+
       User user = User(
         id: widget.user.id,
         name: _name,
@@ -68,22 +110,22 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 24.0, 0, 14.0),
-                    child: new ClipRRect(
-                      borderRadius: BorderRadius.circular(26.0),
-                      child: Image.asset(
-                        currentUser.imageUrl,
-                        height: 92.0,
-                        width: 92.0,
+                    child: Container(
+                      width: 122.0,
+                      height: 122.0,
+                      child: new CircleAvatar(
+                        backgroundColor: ColorsGrey300,
+                        backgroundImage: _displayProfileImage(),
                       ),
                     ),
                   ),
                   FlatButton(
-                    onPressed: () => print('change img'),
+                    onPressed: () => _handleImageFromGallery(),
                     child: Text(
                       'Change profile image',
                       style: secondaryButtonTextStyle,
                     ),
-                    splashColor: Colors.transparent,
+                    // splashColor: Colors.transparent,
                   ),
                   SizedBox(
                     height: 50.0,

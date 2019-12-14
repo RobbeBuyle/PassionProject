@@ -24,20 +24,11 @@ class _ListScreenState extends State<ListScreen> {
     return Scaffold(
       backgroundColor: ColorsLightBackground,
       appBar: AppBar(
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            'Hi, ${currentUser.name}',
-            style: AppBarTextStyle,
-          ),
+        title: Text(
+          'Hi, ${currentUser.name}',
+          style: AppBarTextStyle,
         ),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(FlutterIcons.notifications),
-          ),
-          SizedBox(
-            width: 32.0,
-          ),
           ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
             child: Image.asset(

@@ -18,9 +18,10 @@ class AuthService {
         _firestore.collection('/users').document(signedInUser.uid).setData({
           'name': name,
           'email': email,
-          'profileImageUrl': ',',
+          'profileImageUrl': '',
         });
-        Navigator.pushReplacementNamed(context, App.id);
+        // Navigator.pushReplacementNamed(context, App.id);
+        Navigator.pop(context);
       }
     } catch (e) {
       print(e);

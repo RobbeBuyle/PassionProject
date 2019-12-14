@@ -27,6 +27,7 @@ const String FontNameDefault = "Biotif";
 const AppBarTextStyle = TextStyle(
     fontFamily: FontNameDefault,
     fontWeight: FontWeight.w400,
+    fontSize: 18.0,
     color: ColorsBlack);
 
 const QuoteTextStyle = TextStyle(

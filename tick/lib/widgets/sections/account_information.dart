@@ -38,7 +38,7 @@ class AccountInformation extends StatelessWidget {
                   style: Body1BoldTextStyle,
                 ),
                 Text(
-                  'user.email',
+                  user.email,
                   style: Body1LightTextStyle,
                 )
               ],
