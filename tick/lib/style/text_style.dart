@@ -87,7 +87,23 @@ const Title1TextStyle = TextStyle(
 const AccountNameStyle = TextStyle(
   fontFamily: FontNameDefault,
   fontSize: 25.0,
-  color: Colors.black,
+  color: ColorsBlack,
+);
+
+// CREATE SCREEN
+
+const CreateListTitle = TextStyle(
+  fontFamily: FontNameDefault,
+  fontSize: 34.0,
+  fontWeight: FontWeight.w700,
+  color: ColorsBlack,
+);
+
+const CreateListHashtag = TextStyle(
+  fontFamily: FontNameDefault,
+  fontSize: 18.0,
+  fontWeight: FontWeight.w600,
+  color: ColorsBlack,
 );
 
 const TextButton = TextStyle(

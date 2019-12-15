@@ -1,21 +1,37 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tick/models/user_model.dart';
 import 'package:tick/screens/list_screen.dart';
 
 class CheckList implements ListItem {
-  final User author;
+  final String id;
 
   final String title;
-  final String tag;
+  final String hashtag;
   // final List<Check> checks;
   final String check;
-  final String date;
+  final String authorId;
+  final Timestamp timeStamp;
   final int saves;
 
   CheckList(
-      {this.author, this.title, this.tag, this.check, this.date, this.saves});
+      {this.id,
+      this.title,
+      this.hashtag,
+      this.check,
+      this.authorId,
+      this.timeStamp,
+      this.saves});
 
-  save() {
-    print('save ${this.title} list using FireBase');
+  factory CheckList.fromDoc(DocumentSnapshot doc) {
+    return CheckList(
+      id: doc.documentID,
+      title: doc['title'],
+      hashtag: doc['hashtag'],
+      check: doc['check'],
+      authorId: doc['authorId'],
+      timeStamp: doc['timeStamp'],
+      saves: doc['saves'],
+    );
   }
 }
 
@@ -59,31 +75,31 @@ final User myriam = User(
 
 List<CheckList> lists = [
   CheckList(
-      author: kim,
+      id: 'jksdqhfksf',
+      authorId: 'kim',
       title: '📖 English test',
-      tag: '#school',
+      hashtag: '#school',
       check: 'practise vocab',
-      date: '16/11/19',
       saves: 16),
   CheckList(
-      author: olivia,
+      id: 'skljdfldsjlfdsf',
+      authorId: 'olivia',
       title: '🧳 US Packing',
-      tag: '#traveling',
+      hashtag: '#traveling',
       check: 'visa',
-      date: '16/11/19',
       saves: 16),
   CheckList(
-      author: tim,
+      id: 'sjkdhfjkdshfksdf',
+      authorId: 'tim',
       title: '🛒 Friday shopping',
-      tag: '#shopping',
+      hashtag: '#shopping',
       check: 'Milk',
-      date: '16/11/19',
       saves: 16),
   CheckList(
-      author: myriam,
+      id: 'fjksdhfjkdshkfjsdf',
+      authorId: 'myriam',
       title: '🎉 Weekend party',
-      tag: '#party',
+      hashtag: '#party',
       check: 'Search playlist',
-      date: '16/11/19',
       saves: 16),
 ];

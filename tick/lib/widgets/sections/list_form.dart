@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tick/models/checklist_model.dart';
+import 'package:tick/style/color_style.dart';
+import 'package:tick/style/text_style.dart';
 
 class ListForm extends StatefulWidget {
   @override
@@ -12,25 +14,6 @@ class _ListFormState extends State<ListForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      child: Container(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Builder(
-            builder: (context) => Form(
-              key: _formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  TextFormField(),
-                  TextFormField(),
-                  TextFormField(),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
+    return Container();
   }
 }

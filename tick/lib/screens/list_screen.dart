@@ -32,7 +32,7 @@ class _ListScreenState extends State<ListScreen> {
         actions: <Widget>[
           Container(
             child: CircleAvatar(
-              radius: 30.0,
+              radius: 29.0,
               backgroundColor: ColorsGrey300,
               backgroundImage: AssetImage('assets/images/user_placeholder.jpg'),
             ),
@@ -78,7 +78,7 @@ class _ListScreenState extends State<ListScreen> {
                   mainAxisSpacing: 10.0,
                   crossAxisSpacing: 10.0,
                   childAspectRatio: 4.0),
-            )
+            ),
           ],
         ),
       ),
