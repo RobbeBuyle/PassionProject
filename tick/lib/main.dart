@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tick/models/user_data.dart';
 import 'package:tick/screens/create_screen.dart';
+import 'package:tick/screens/detail_view.dart';
 import 'package:tick/screens/list_screen.dart';
 import 'package:tick/screens/login_screen.dart';
 import 'package:tick/screens/signup_screen.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         home: _getScreenId(),
         routes: {
           '/create': (context) => CreateScreen(),
+          '/detail': (context) => DetailScreen(),
           LoginScreen.id: (context) => LoginScreen(),
           SignUpScreen.id: (context) => SignUpScreen(),
           ListScreen.id: (context) => ListScreen(),

@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tick/models/user_model.dart';
 import 'package:tick/screens/list_screen.dart';
 
-class CheckList implements ListItem {
+class CheckList {
   final String id;
 
   final String title;

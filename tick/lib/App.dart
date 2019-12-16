@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tick/models/user_model.dart';
 import 'package:tick/screens/account_screen.dart';
 import 'package:tick/screens/create_screen.dart';
 import 'package:tick/screens/discover_screen.dart';
@@ -28,15 +29,18 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
+    final String currentUserId = Provider.of<UserData>(context).currentUserId;
     return Container(
       color: ColorsLightBackground,
       child: SafeArea(
         child: Scaffold(
           body: [
-            ListScreen(),
+            ListScreen(
+              currentUserId: currentUserId,
+            ),
             DiscoverScreen(),
             AccountScreen(
-              userId: Provider.of<UserData>(context).currentUserId,
+              userId: currentUserId,
             ),
             CreateScreen()
           ].elementAt(_selectedIndex),
