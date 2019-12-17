@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:tick/models/check_model.dart';
 import 'package:tick/models/checklist_model.dart';
 import 'package:tick/models/user_model.dart';
 import 'package:tick/screens/detail_view.dart';
@@ -27,6 +28,7 @@ class ListScreen extends StatefulWidget {
 
 class _ListScreenState extends State<ListScreen> {
   List<CheckList> _checkLists = [];
+  List<Check> _checks = [];
 
   @override
   void initState() {
@@ -34,15 +36,31 @@ class _ListScreenState extends State<ListScreen> {
     super.initState();
 
     _setupList();
+    _loadChecks();
+  }
+
+  _loadChecks() async {
+    List<Check> checks = await DatabaseService.getChecks();
+    print(checks);
+
+    setState(() {
+      _checks = checks;
+    });
   }
 
   _setupList() async {
     List<CheckList> checkLists =
         await DatabaseService.getCheckLists(widget.currentUserId);
-    print(checkLists);
+    // print(checkLists);
     setState(() {
       _checkLists = checkLists;
     });
+  }
+
+  _buildCheck(Check check, User author) {
+    return Container(
+      child: Text(check.title),
+    );
   }
 
   _buildCheckList(CheckList checkList, User author) {
@@ -82,10 +100,10 @@ class _ListScreenState extends State<ListScreen> {
               SizedBox(
                 height: 20.0,
               ),
-              Text(
-                checkList.check,
-                style: Body1TextStyle,
-              ),
+              // Text(
+              //   checkList.check,
+              //   style: Body1TextStyle,
+              // ),
             ],
           ),
         ),
@@ -123,6 +141,30 @@ class _ListScreenState extends State<ListScreen> {
           slivers: <Widget>[
             SliverToBoxAdapter(
               child: HomescreenQuote(),
+            ),
+            SliverGrid(
+              delegate: SliverChildBuilderDelegate((context, index) {
+                //HERE COMES THE CUSTOM CODE FOR OUT LIST PREVIEWS
+                // return Container(
+                //   alignment: Alignment.center,
+                //   color: Colors.teal[100 * (index % 9)],
+                //   child: Text('grid item $index'),
+                // );
+                Check check = _checks[index];
+                CheckList checkList = _checkLists[index];
+                return FutureBuilder(
+                  future: DatabaseService.getUserWithId(checkList.authorId),
+                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                    User author = snapshot.data;
+                    return _buildCheck(check, author);
+                  },
+                );
+              }, childCount: _checks.length),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 2.0,
+                crossAxisSpacing: 2.0,
+              ),
             ),
             SliverToBoxAdapter(
               child: CategorySelector(),

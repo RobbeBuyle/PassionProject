@@ -1,7 +1,17 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Check {
-  final int id;
-  final String description;
+  final String id;
+  final String title;
   final bool isDone;
 
-  Check(this.id, this.description, this.isDone);
+  Check({this.id, this.title, this.isDone});
+
+  factory Check.fromDoc(DocumentSnapshot doc) {
+    return Check(
+      id: doc.documentID,
+      title: doc['title'],
+      isDone: doc['done'],
+    );
+  }
 }

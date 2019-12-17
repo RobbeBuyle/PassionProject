@@ -5,3 +5,4 @@ final _firestore = Firestore.instance;
 final usersRef = _firestore.collection('users');
 final storageRef = FirebaseStorage.instance.ref();
 final checkListRef = _firestore.collection('checkLists');
+final checkRef = _firestore.collectionGroup('checks');

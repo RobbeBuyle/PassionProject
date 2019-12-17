@@ -10,19 +10,23 @@ class DetailScreen extends StatefulWidget {
   DetailScreen({this.checkList});
 
   @override
-  _DetailScreenState createState() => _DetailScreenState();
+  _DetailScreenState createState() => _DetailScreenState(checkList);
 }
 
 class _DetailScreenState extends State<DetailScreen> {
   _submit() {}
 
+  CheckList checkList;
+  _DetailScreenState(this.checkList);
+
   @override
   Widget build(BuildContext context) {
     print('xd');
+    print(checkList.title);
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'detail',
+          checkList.title,
           style: AppBarTextStyle,
         ),
         actions: <Widget>[
