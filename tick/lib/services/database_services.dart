@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tick/models/check_model.dart';
 import 'package:tick/models/checklist_model.dart';
 import 'package:tick/models/user_model.dart';
 import 'package:tick/utilities/constants.dart';
@@ -24,18 +23,6 @@ class DatabaseService {
     });
   }
 
-  // static void createCheck(Check checkList) {
-  //   checkListRef.document(checkList.authorId).collection('userCheckLists')
-  // }
-
-  static Future<List> getChecks() async {
-    QuerySnapshot checkSnapshot = await checkRef.getDocuments();
-
-    List<Check> checks =
-        checkSnapshot.documents.map((doc) => Check.fromDoc(doc)).toList();
-    return checks;
-  }
-
   static Future<List<CheckList>> getCheckLists(String userId) async {
     // print('allo, $userId');
 
@@ -44,7 +31,7 @@ class DatabaseService {
         .collection('userCheckLists')
         .orderBy('timeStamp', descending: true)
         .getDocuments();
-    // print(checkListsSnapshot.documents);
+    print(checkListsSnapshot.documents);
 
     List<CheckList> checkLists = checkListsSnapshot.documents
         .map((doc) => CheckList.fromDoc(doc))
