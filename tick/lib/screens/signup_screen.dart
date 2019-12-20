@@ -95,12 +95,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30.0)),
                       child: FlatButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(70.0)),
                         onPressed: _submit,
                         color: ColorsPurple,
                         padding: EdgeInsets.all(15.0),
                         child: Text(
                           'Sign Up',
-                          style: Body1TextStyle,
+                          style: Body1TextStyleWhite,
                         ),
                       ),
                     ),

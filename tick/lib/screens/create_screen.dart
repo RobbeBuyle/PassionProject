@@ -59,6 +59,8 @@ class _CreateScreenState extends State<CreateScreen> {
         _check = '';
         _isLoading = false;
       });
+
+      Navigator.pop(context);
     }
   }
 

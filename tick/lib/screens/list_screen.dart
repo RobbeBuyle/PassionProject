@@ -100,7 +100,7 @@ class _ListScreenState extends State<ListScreen> {
       backgroundColor: ColorsLightBackground,
       appBar: AppBar(
         title: Text(
-          'Hi, ${currentUser.name}',
+          'Hi there!',
           style: AppBarTextStyle,
         ),
         actions: <Widget>[
@@ -120,51 +120,54 @@ class _ListScreenState extends State<ListScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 14.0),
-        child: CustomScrollView(
-          slivers: <Widget>[
-            SliverToBoxAdapter(
-              child: HomescreenQuote(),
-            ),
-            SliverToBoxAdapter(
-              child: CategorySelector(),
-            ),
-            // SliverToBoxAdapter(
-            //   child: FlatButton(
-            //     child: Text('Log Out'),
-            //     onPressed: () => AuthService.logout(),
-            //   ),
-            // ),
+        child: RefreshIndicator(
+          onRefresh: () => _setupList(),
+          child: CustomScrollView(
+            slivers: <Widget>[
+              SliverToBoxAdapter(
+                child: HomescreenQuote(),
+              ),
+              SliverToBoxAdapter(
+                child: CategorySelector(),
+              ),
+              // SliverToBoxAdapter(
+              //   child: FlatButton(
+              //     child: Text('Log Out'),
+              //     onPressed: () => AuthService.logout(),
+              //   ),
+              // ),
 
-            _checkLists.length > 0
-                ? SliverGrid(
-                    delegate: SliverChildBuilderDelegate((context, index) {
-                      //HERE COMES THE CUSTOM CODE FOR OUT LIST PREVIEWS
-                      // return Container(
-                      //   alignment: Alignment.center,
-                      //   color: Colors.teal[100 * (index % 9)],
-                      //   child: Text('grid item $index'),
-                      // );
-                      CheckList checkList = _checkLists[index];
-                      return FutureBuilder(
-                        future:
-                            DatabaseService.getUserWithId(checkList.authorId),
-                        builder:
-                            (BuildContext context, AsyncSnapshot snapshot) {
-                          User author = snapshot.data;
-                          return _buildCheckList(checkList, author);
-                        },
-                      );
-                    }, childCount: _checkLists.length),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 2.0,
-                      crossAxisSpacing: 2.0,
+              _checkLists.length > 0
+                  ? SliverGrid(
+                      delegate: SliverChildBuilderDelegate((context, index) {
+                        //HERE COMES THE CUSTOM CODE FOR OUT LIST PREVIEWS
+                        // return Container(
+                        //   alignment: Alignment.center,
+                        //   color: Colors.teal[100 * (index % 9)],
+                        //   child: Text('grid item $index'),
+                        // );
+                        CheckList checkList = _checkLists[index];
+                        return FutureBuilder(
+                          future:
+                              DatabaseService.getUserWithId(checkList.authorId),
+                          builder:
+                              (BuildContext context, AsyncSnapshot snapshot) {
+                            User author = snapshot.data;
+                            return _buildCheckList(checkList, author);
+                          },
+                        );
+                      }, childCount: _checkLists.length),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 2.0,
+                        crossAxisSpacing: 2.0,
+                      ),
+                    )
+                  : SliverToBoxAdapter(
+                      child: Center(child: Text('No lists yet 😮')),
                     ),
-                  )
-                : SliverToBoxAdapter(
-                    child: Center(child: Text('No lists yet 😮')),
-                  ),
-          ],
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
